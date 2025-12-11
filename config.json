@@ -58,6 +58,44 @@
           "type": "csv"
         }
       ]
+    },
+    {
+      "id": "text-processing",
+      "title": "Python Text Processing",
+      "description": "String manipulation, file I/O, and text transformation techniques",
+      "path": "assignments/text-processing",
+      "dueDate": "2025-12-18",
+      "attachments": [
+        {
+          "name": "Starter Code",
+          "file": "starter-code.py",
+          "type": "python"
+        },
+        {
+          "name": "Sample Text File",
+          "file": "sample.txt",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "fastapi-rest-api",
+      "title": "Building REST APIs with FastAPI",
+      "description": "HTTP methods, request/response handling, data validation, and API best practices",
+      "path": "assignments/fastapi-rest-api",
+      "dueDate": "2025-12-18",
+      "attachments": [
+        {
+          "name": "Starter Code",
+          "file": "starter-code.py",
+          "type": "python"
+        },
+        {
+          "name": "Requirements",
+          "file": "requirements.txt",
+          "type": "text"
+        }
+      ]
     }
   ]
 }

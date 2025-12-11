@@ -1,0 +1,93 @@
+# FastAPI Project Requirements
+
+## Installation
+
+To run this FastAPI project, install the required dependencies:
+
+```bash
+pip install fastapi uvicorn python-multipart
+```
+
+## Running the Server
+
+Start the development server:
+
+```bash
+python starter-code.py
+```
+
+Or using uvicorn directly:
+
+```bash
+uvicorn starter-code:app --reload
+```
+
+The API will be available at: `http://localhost:8000`
+
+## API Documentation
+
+FastAPI automatically generates interactive documentation:
+
+- **Swagger UI**: `http://localhost:8000/docs`
+- **ReDoc**: `http://localhost:8000/redoc`
+
+## Testing Endpoints
+
+### Using curl
+
+```bash
+# Get all tasks
+curl http://localhost:8000/tasks
+
+# Get specific task
+curl http://localhost:8000/tasks/1
+
+# Create new task
+curl -X POST http://localhost:8000/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Learn FastAPI", "description": "Master FastAPI basics"}'
+
+# Update task
+curl -X PUT http://localhost:8000/tasks/1 \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Master FastAPI", "description": "Complete FastAPI course", "completed": true}'
+
+# Delete task
+curl -X DELETE http://localhost:8000/tasks/1
+```
+
+### Using Python requests library
+
+```python
+import requests
+
+base_url = "http://localhost:8000"
+
+# Get all tasks
+response = requests.get(f"{base_url}/tasks")
+print(response.json())
+
+# Create task
+task_data = {
+    "title": "Learn FastAPI",
+    "description": "Master FastAPI framework"
+}
+response = requests.post(f"{base_url}/tasks", json=task_data)
+print(response.json())
+```
+
+## Learning Resources
+
+- [FastAPI Official Documentation](https://fastapi.tiangolo.com/)
+- [Pydantic Documentation](https://docs.pydantic.dev/)
+- [HTTP Status Codes Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [REST API Best Practices](https://restfulapi.net/)
+
+## Tips for Completing This Assignment
+
+1. Start with Task 1 - Build basic CRUD endpoints
+2. Move to Task 2 - Add Pydantic models for validation
+3. Complete Task 3 - Implement advanced features like filtering and pagination
+4. Test each endpoint using the interactive Swagger UI
+5. Check the auto-generated documentation at `/docs` endpoint
+6. Use type hints consistently throughout your code
